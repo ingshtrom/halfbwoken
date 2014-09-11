@@ -16,7 +16,7 @@ Gem::Specification.new do |gem|
   gem.require_path = 'lib'
 
   gem.bindir        = 'bin'
-  gem.executables   = ['unix_instruments.sh', 'bwoken']
+  gem.executables   = ['unix_instruments.sh', 'halfbwoken']
 
   gem.add_dependency 'coffee-script-source'
   gem.add_dependency 'colorful'
