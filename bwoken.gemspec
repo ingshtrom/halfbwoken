@@ -2,14 +2,14 @@
 require File.expand_path('../lib/bwoken/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.name          = 'bwoken'
+  gem.name          = 'half-bwoken'
   gem.version       = Bwoken::VERSION
   gem.description   = %q{iOS UIAutomation Test Runner}
   gem.summary       = %q{Runs your UIAutomation tests from the command line for both iPhone and iPad; supports coffeescript}
 
-  gem.authors       = ['Brad Grzesiak']
-  gem.email         = ['brad@bendyworks.com']
-  gem.homepage      = 'https://bendyworks.github.com/bwoken'
+  gem.authors       = ['Brad Grzesiak', 'Alex Hokanson']
+  gem.email         = ['brad@bendyworks.com', 'alex.hokanson@mysticgear.com']
+  gem.homepage      = 'https://github.com/ingshtrom/bwoken'
   gem.license       = 'MIT'
 
   gem.files        = Dir['LICENSE', 'README.md', 'bin/**/*', 'lib/**/*']
