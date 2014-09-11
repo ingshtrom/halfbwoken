@@ -52,7 +52,11 @@ module Bwoken
 
       Open3.popen3(cmd) do |stdin, stdout, stderr, wait_thr|
         exit_status = formatter.format stdout
-        raise ScriptFailedError.new('Test Script Failed') unless exit_status == 0
+        unless exit_status == 0
+          puts '##########################'
+          puts '### TEST SCRIPT FAILED ###'
+          puts '##########################'
+        end
       end
     end
 
