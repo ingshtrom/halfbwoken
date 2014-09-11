@@ -37,7 +37,7 @@ module Bwoken
 
     def cmd
       %Q|"#{File.expand_path('../../../bin', __FILE__)}/unix_instruments.sh" \
-        -w #{simulator_sdk}
+        -w #{simulator_sdk} \
         #{device_flag} \
         -D "#{self.class.trace_file_path}" \
         -t "#{Bwoken.path_to_automation_template}" \
