@@ -2,3 +2,8 @@
 * set "-arch i386"
 * add #github to javascript files
 * handle when user hasn't yet installed the app on a device. error message is "unable to locate CFBundleIdentifier for path...". Watch for this, then alert the user
+
+* output Junit results
+* wire up ColorfulBRFormatter
+* extract test case metadata from file name
+* make --sim-sdk have a resonable default or just don't include it if isn't set via cli params
