@@ -36,7 +36,7 @@ module Bwoken
     end
 
     def cmd
-      if simulator_sdk.empty.nil?
+      if simulator_sdk.nil?
         %Q|"#{File.expand_path('../../../bin', __FILE__)}/unix_instruments.sh" \
           #{device_flag} \
           -D "#{self.class.trace_file_path}" \
