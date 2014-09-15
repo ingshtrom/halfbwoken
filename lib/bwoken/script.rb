@@ -36,13 +36,22 @@ module Bwoken
     end
 
     def cmd
-      %Q|"#{File.expand_path('../../../bin', __FILE__)}/unix_instruments.sh" \
-        -w #{simulator_sdk} \
-        #{device_flag} \
-        -D "#{self.class.trace_file_path}" \
-        -t "#{Bwoken.path_to_automation_template}" \
-        "#{app_dir}" \
-        #{env_variables_for_cli}|
+      if simulator_sdk.empty.nil?
+        %Q|"#{File.expand_path('../../../bin', __FILE__)}/unix_instruments.sh" \
+          #{device_flag} \
+          -D "#{self.class.trace_file_path}" \
+          -t "#{Bwoken.path_to_automation_template}" \
+          "#{app_dir}" \
+          #{env_variables_for_cli}|
+      else
+        %Q|"#{File.expand_path('../../../bin', __FILE__)}/unix_instruments.sh" \
+          "-w #{simulator_sdk} \"
+          #{device_flag} \
+          -D "#{self.class.trace_file_path}" \
+          -t "#{Bwoken.path_to_automation_template}" \
+          "#{app_dir}" \
+          #{env_variables_for_cli}|
+      end
     end
 
     def device_flag
