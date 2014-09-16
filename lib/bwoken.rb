@@ -43,7 +43,9 @@ module Bwoken
     def path_to_automation_template
       template = nil
       `xcrun instruments -s 2>&1 | grep Automation.tracetemplate`.split("\n").each do |path|
-        path = path.gsub(/^\s*"|",\s*$/, "")
+        path
+          .gsub!(/^\s*"|",\s*$/, '')  # remove starting or trailing spaces
+          .gsub!(/^"|"$/, '')         # remove starting or trailing double quotes that were missed
         template = path if File.exists?(path)
         break if template
       end
