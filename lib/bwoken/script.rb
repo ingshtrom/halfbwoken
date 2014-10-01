@@ -46,7 +46,6 @@ module Bwoken
       else
         %Q|"#{File.expand_path('../../../bin', __FILE__)}/unix_instruments.sh" \
           -w "#{simulator_sdk}" \
-          #{device_flag} \
           -D "#{self.class.trace_file_path}" \
           -t "#{Bwoken.path_to_automation_template}" \
           "#{app_dir}" \
@@ -60,6 +59,8 @@ module Bwoken
 
     def run
       formatter.before_script_run path
+
+      puts cmd
 
       Open3.popen3(cmd) do |stdin, stdout, stderr, wait_thr|
         exit_status = formatter.format stdout

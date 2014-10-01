@@ -41,15 +41,16 @@ module Bwoken
     end
 
     def path_to_automation_template
-      template = nil
-      `xcrun instruments -s 2>&1 | grep Automation.tracetemplate`.split("\n").each do |path|
-        path
-          .gsub!(/^\s*"|",\s*$/, '')  # remove starting or trailing spaces
-          .gsub!(/^"|"$/, '')         # remove starting or trailing double quotes that were missed
-        template = path if File.exists?(path)
-        break if template
-      end
-      template
+      # template = nil
+      # `xcrun instruments -s 2>&1 | grep Automation.tracetemplate`.split("\n").each do |path|
+      #   path
+      #     .gsub!(/^\s*"|",\s*$/, '')  # remove starting or trailing spaces
+      #     .gsub!(/^"|"$/, '')         # remove starting or trailing double quotes that were missed
+      #   template = path if File.exists?(path)
+      #   break if template
+      # end
+      # template
+      "Automation"
     end
 
     %w(xcworkspace xcodeproj).each do |xcode_root|
