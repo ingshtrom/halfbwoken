@@ -1,3 +1,3 @@
 module Bwoken
-  VERSION = "2.1.9" unless defined?(::Bwoken::VERSION)
+  VERSION = "2.2.0" unless defined?(::Bwoken::VERSION)
 end

@@ -64,7 +64,10 @@ module Bwoken
 
       Open3.popen3(cmd) do |stdin, stdout, stderr, wait_thr|
         exit_status = formatter.format stdout
-        unless exit_status == 0
+        if exit_status == 0
+          puts ''
+          puts ''
+        else
           puts '##########################'
           puts '### TEST SCRIPT FAILED ###'
           puts '##########################'
